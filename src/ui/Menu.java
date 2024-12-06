@@ -1,5 +1,7 @@
 package ui;
 
+import Model.Cliente;
+import Model.Empleado;
 import Model.Producto;
 import Enum.Categoria;
 import Service.ProductoService;
@@ -19,9 +21,9 @@ public class Menu {
                     1- Listar productos disponibles
                     2- Ver productos por categoria
                     3- Ver detalles de un producto
-                    4- Comprar producto
-                    5- Ingresar como empleado
-                    5- Salir
+                    4- Operaciones Cliente.
+                    5- Operaciones Empleado.
+                    6- Salir
                     """);
             option = sc.nextInt();
 
@@ -35,13 +37,37 @@ public class Menu {
                 case 3:
                     verProductoDetalle();
                     break;
+                case 4:
+                    operacionesCliente();
+                    break;
                 case 5:
-                    System.out.println("Saliendo del sistema");
+                    operacionesEmpleado();
                     break;
                 default:
                     System.out.println("Opcion incorrecta");
             }
-        } while (option != 5);
+        } while (option != 6);
+    }
+
+    private static void operacionesEmpleado() {
+        System.out.println("----OPERACIONES EMPLEADO--------");
+        Cliente cliente1 = new Cliente("Marina","110423394",1000);
+        Empleado empleado1 = new Empleado("Carlos","11046278293","Cajero",800);
+        empleado1.mostrarInformacion();
+        System.out.println("Beneficio empleado : "+empleado1.calcularBeneficio());
+        empleado1.realizarAccion();
+        empleado1.procesarCompra(cliente1,500);
+
+
+    }
+
+    private static void operacionesCliente() {
+        System.out.println("----OPERACIONES CLIENTE--------");
+        Cliente cliente1 = new Cliente("Carlos","1105673443",500);
+        cliente1.mostrarInformacion();
+        System.out.println("Beneficio cliente : "+ cliente1.calcularBeneficio());
+        cliente1.realizarAccion();
+        cliente1.pagar(400);
     }
 
     public static void listarProductos(){
