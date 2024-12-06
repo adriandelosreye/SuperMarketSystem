@@ -1,0 +1,5 @@
+package Enum;
+
+public enum Categoria {
+    LACTEOS, ELECTRODOMESTICOS, ALIMENTOS, BEBIDAS, FRUTAS, CEREALES, VEGETALES
+}
