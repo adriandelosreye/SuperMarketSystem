@@ -15,6 +15,14 @@ public class ProductoService {
         productos.add(new Producto(2, "Leche", 40, Categoria.LACTEOS));
     }
 
+    public List<Producto> getProductos() {
+        return productos;
+    }
+
+    public void setProductos(List<Producto> productos) {
+        this.productos = productos;
+    }
+
     public List<Producto> obtenerProductos(){
         return productos;
     }
