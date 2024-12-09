@@ -2,6 +2,7 @@ package ui;
 
 import Model.Cliente;
 import Model.Empleado;
+import Model.Persona;
 import Model.Producto;
 import Enum.Categoria;
 import Service.ProductoService;
@@ -49,25 +50,43 @@ public class Menu {
         } while (option != 6);
     }
 
-    private static void operacionesEmpleado() {
+//    private static void operacionesEmpleado() {
+//        System.out.println("----OPERACIONES EMPLEADO--------");
+//        Cliente cliente1 = new Cliente("Marina","110423394",1000);
+//        Empleado empleado1 = new Empleado("Carlos","11046278293","Cajero",800);
+//        empleado1.mostrarInformacion();
+//        System.out.println("Beneficio empleado : "+empleado1.calcularBeneficio());
+//        empleado1.realizarAccion();
+//        empleado1.procesarCompra(cliente1,500);
+//    }
+
+//    private static void operacionesCliente() {
+//        System.out.println("----OPERACIONES CLIENTE--------");
+//        Cliente cliente1 = new Cliente("Carlos","1105673443",500);
+//        cliente1.mostrarInformacion();
+//        System.out.println("Beneficio cliente : "+ cliente1.calcularBeneficio());
+//        cliente1.realizarAccion();
+//        cliente1.pagar(400);
+//    }
+
+    private static void operacionesEmpleado(){
         System.out.println("----OPERACIONES EMPLEADO--------");
-        Cliente cliente1 = new Cliente("Marina","110423394",1000);
-        Empleado empleado1 = new Empleado("Carlos","11046278293","Cajero",800);
-        empleado1.mostrarInformacion();
-        System.out.println("Beneficio empleado : "+empleado1.calcularBeneficio());
-        empleado1.realizarAccion();
-        empleado1.procesarCompra(cliente1,500);
 
+        Persona cliente = new Cliente("Marina","110423394",1000);
+        Persona empleado = new Empleado("Carlos","11046278293","Cajero",800);
 
+        empleado.realizarTareas();
+        empleado.procesarCompra(cliente, 400);
     }
 
-    private static void operacionesCliente() {
+    private static void operacionesCliente(){
         System.out.println("----OPERACIONES CLIENTE--------");
-        Cliente cliente1 = new Cliente("Carlos","1105673443",500);
-        cliente1.mostrarInformacion();
-        System.out.println("Beneficio cliente : "+ cliente1.calcularBeneficio());
-        cliente1.realizarAccion();
-        cliente1.pagar(400);
+
+        Persona cliente = new Cliente("Marina","110423394",1000);
+        Persona empleado = new Empleado("Carlos","11046278293","Cajero",800);
+
+        cliente.realizarTareas();
+        cliente.procesarCompra(empleado,400);
     }
 
     public static void listarProductos(){

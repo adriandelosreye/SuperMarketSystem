@@ -16,10 +16,11 @@ public class Cliente extends Persona {
         this.saldo = saldo;
     }
 
-    public void pagar(double monto) {
+    @Override
+    public void procesarCompra(Persona persona, double monto) {
         if (monto <= saldo) {
             saldo -= monto;
-            System.out.println("Pago exitoso. Saldo restante: $" + saldo);
+            System.out.println("Pagando a: " + persona.getNombre() +". Pago exitoso. Saldo restante: $" + saldo);
         } else {
             System.out.println("Saldo insuficiente para realizar el pago.");
         }

@@ -26,10 +26,9 @@ public class Empleado extends Persona{
         this.salario = salario;
     }
 
-    // Método específico para procesar una compra
-    public void procesarCompra(Cliente cliente, double monto) {
-        System.out.println("Procesando compra por $" + monto + " para el cliente " + cliente.getNombre());
-
+    @Override
+    public void procesarCompra(Persona persona, double monto) {
+        System.out.println("Procesando compra por $" + monto + " del cliente: " + persona.getNombre());
     }
 
     @Override
