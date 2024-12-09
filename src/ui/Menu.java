@@ -44,6 +44,9 @@ public class Menu {
                 case 5:
                     operacionesEmpleado();
                     break;
+                case 6:
+                    System.out.println("Saliendo del sistema");
+                    break;
                 default:
                     System.out.println("Opcion incorrecta");
             }
